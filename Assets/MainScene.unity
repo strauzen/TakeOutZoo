@@ -99,7 +99,6 @@ GameObject:
   m_Component:
   - 4: {fileID: 172897083}
   - 108: {fileID: 172897082}
-  - 114: {fileID: 172897084}
   m_Layer: 0
   m_Name: Directional Light
   m_TagString: Untagged
@@ -154,19 +153,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 2
---- !u!114 &172897084
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 172897081}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 172a16230b982da40a621b874e3176b1, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  myMessage: Welcome
-  textWelcome: {fileID: 0}
 --- !u!1 &308304201 stripped
 GameObject:
   m_PrefabParentObject: {fileID: 100000, guid: fadddc63520db414bbc9126cbf4743ad, type: 3}
@@ -269,7 +255,7 @@ GameObject:
   - 114: {fileID: 825985356}
   - 114: {fileID: 825985355}
   m_Layer: 5
-  m_Name: Canvas
+  m_Name: CanvasWelcome
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -530,8 +516,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 172a16230b982da40a621b874e3176b1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  myMessage: Welcome
+  myMessage: WELCOME
   textWelcome: {fileID: 475175351}
+  canvasWelcome: {fileID: 825985354}
 --- !u!4 &1502672243
 Transform:
   m_ObjectHideFlags: 0

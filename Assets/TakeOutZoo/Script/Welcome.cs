@@ -7,8 +7,10 @@ namespace tutorial
     public class Welcome : MonoBehaviour
     {
 
-        public string myMessage = "WELCOME";
+        public string myMessage;
+        private float waitTime = 3.5f;
         public Text textWelcome;
+        public GameObject canvasWelcome;
 
         // Use this for initialization
         void Start()
@@ -24,7 +26,7 @@ namespace tutorial
 
         void MyWelcomeMessage()
         {
-            if(textWelcome != null)
+            if (textWelcome != null)
             {
                 textWelcome.text = myMessage;
             }
@@ -32,6 +34,15 @@ namespace tutorial
             {
                 Debug.LogWarning("WelcomeText not assigned");
             }
+
+            StartCoroutine(DisableCanvas(this.waitTime));
+
+        }
+
+        IEnumerator DisableCanvas(float waitTime)
+        {
+            yield return new WaitForSeconds(waitTime);
+            canvasWelcome.SetActive(false);
         }
     }
 }
