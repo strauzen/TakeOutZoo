@@ -8,11 +8,14 @@ namespace tutorial
     {
         public float fireRate = 0.3f;
         private float nextFire;
+        private RaycastHit hit;
+        private float range = 300;
+        private Transform myTransform;
 
         // Use this for initialization
         void Start()
         {
-
+            SetInitialReferences();
         }
 
         // Update is called once per frame
@@ -21,20 +24,24 @@ namespace tutorial
             CheckForInput();
         }
 
+        void SetInitialReferences()
+        {
+            myTransform = transform;
+        }
+
         void CheckForInput()
         {
-            /*
-            if (Input.GetKey(KeyCode.Mouse0) && Time.time > nextFire)
-            {
-                nextFire = Time.time + fireRate;
-                Debug.Log("Key pressed");
-            }
-            */
 
             if (Input.GetButton("Fire1") && Time.time > nextFire)
             {
+                Debug.DrawRay(myTransform.TransformPoint(0,0,1), myTransform.forward, Color.green, 3);
+                if (Physics.Raycast(myTransform.TransformPoint(0,0,1), myTransform.forward, out hit, range))
+                {
+                    Debug.Log(hit.transform.name);
+                }
+
                 nextFire = Time.time + fireRate;
-                Debug.Log("Key pressed");
+                //Debug.Log("Key pressed");
             }
         }
     }
